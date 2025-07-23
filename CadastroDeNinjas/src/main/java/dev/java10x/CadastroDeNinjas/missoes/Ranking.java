@@ -2,16 +2,18 @@ package dev.java10x.CadastroDeNinjas.missoes;
 
 public enum Ranking {
 
-    RANK_S("rank S"),
-    RANK_A("rank A"),
-    RANK_B("rank B"),
-    RANK_C("rank C"),
-    RANK_D("rank D");
+    RANK_S("rank S", "Elite"),
+    RANK_A("rank A", "Alto"),
+    RANK_B("rank B", "Médio"),
+    RANK_C("rank C", "Baixo"),
+    RANK_D("rank D", "Iniciante");
 
     private String nomeRank;
+    private String nivelRank;
 
-    Ranking(String nomeRank) {
+    Ranking(String nomeRank, String nivelRank) {
         this.nomeRank = nomeRank;
+        this.nivelRank = nivelRank;
     }
 
     public String getNomeRank() {
@@ -20,6 +22,14 @@ public enum Ranking {
 
     public void setNomeRank(String nomeRank) {
         this.nomeRank = nomeRank;
+    }
+
+    public String getNivelRank() {
+        return nivelRank;
+    }
+
+    public void setNivelRank(String nivelRank) {
+        this.nivelRank = nivelRank;
     }
 
 }
