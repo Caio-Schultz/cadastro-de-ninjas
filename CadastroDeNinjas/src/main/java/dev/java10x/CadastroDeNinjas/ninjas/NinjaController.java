@@ -1,6 +1,5 @@
 package dev.java10x.CadastroDeNinjas.ninjas;
 
-
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,8 +21,9 @@ public class NinjaController {
 
     // Adicionar Ninja (CREATE)
     @PostMapping("/criar")
-    public String criarNinja(){
-        return "Ninja criado";
+    // @RequestBody indica que é necessário passar no corpo da requisição POST um Json com os atributos (colunas) do ninja para ser adicionado
+    public NinjaModel criarNinja(@RequestBody NinjaModel ninja){
+        return ninjaService.criarNinja(ninja);
     }
 
     // Mostrar todos os ninjas (READ)
