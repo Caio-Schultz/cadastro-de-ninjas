@@ -35,4 +35,15 @@ public class NinjaService {
         ninjaRepository.deleteById(id);
     }
 
+    // Atualizar ninja por id
+    // Metodo de PUT é quase como uma junção do metodo de de procurar por id e de criar
+    public NinjaModel atualizarNinjaPorId(Long id, NinjaModel ninjaAtualizado){
+        if(ninjaRepository.existsById(id)){
+            ninjaAtualizado.setId(id);
+            return ninjaRepository.save(ninjaAtualizado);
+        }
+
+        return null;
+    }
+
 }
