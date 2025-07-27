@@ -28,9 +28,9 @@ public class MissoesController {
     }
 
     // mostrar missão por id (READ)
-    @GetMapping("/todasId")
-    public String mostrarMissaoPorId(){
-        return "Missão por id mostrada";
+    @GetMapping("/listar/{id}")
+    public MissoesModel listarMissaoPorId(@PathVariable Long id){
+        return missoesService.listarMissaoPorId(id);
     }
 
     // alterar dados da missão por id (UPDATE)
