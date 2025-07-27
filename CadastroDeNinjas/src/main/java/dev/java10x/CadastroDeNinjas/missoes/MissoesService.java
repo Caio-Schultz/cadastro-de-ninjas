@@ -30,5 +30,10 @@ public class MissoesService {
         return missao.orElse(null);
     }
 
+    // Deletar missão
+    public void deletarMissaoPorId(Long id){
+        missoesRepository.deleteById(id);
+    }
+
 
 }
