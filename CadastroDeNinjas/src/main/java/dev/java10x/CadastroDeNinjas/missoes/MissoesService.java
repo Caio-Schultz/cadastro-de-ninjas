@@ -35,5 +35,15 @@ public class MissoesService {
         missoesRepository.deleteById(id);
     }
 
+    // Atualizar missão
+    public MissoesModel atualizarMissaoPorId(Long id, MissoesModel missao){
+        if(missoesRepository.existsById(id)){
+            missao.setId(id);
+            return missoesRepository.save(missao);
+        }
+
+        return null;
+    }
+
 
 }
