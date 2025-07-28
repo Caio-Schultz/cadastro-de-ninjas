@@ -23,6 +23,9 @@ public class NinjaModel {
     private String imgUrl;
     private int idade;
 
+    @Column(name = "rank")
+    private String rank;
+
     // @ManyToOne - Várias ninjas podem estar na mesma missão
     @ManyToOne
     @JoinColumn(name = "missoes_id") // Foreign Key
