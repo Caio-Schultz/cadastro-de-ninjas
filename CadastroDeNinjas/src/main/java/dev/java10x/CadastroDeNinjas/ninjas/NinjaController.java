@@ -28,7 +28,7 @@ public class NinjaController {
 
     // Mostrar todos os ninjas (READ)
     @GetMapping("/listar")
-    public List<NinjaModel> listarNinjas(){
+    public List<NinjaDTO> listarNinjas(){
         return ninjaService.listarNinjas();
     }
 
@@ -36,13 +36,13 @@ public class NinjaController {
     // Quando colocamos algo entre {} está sendo passado um "path variable", ou seja, algo que o usuário passa para complementar a url. Nesse caso, o id do ninja que o usuário quer listar
     // Temos que colocar a anotation @PathVariable para indicar justamente o que será o path variable
     @GetMapping("/listar/{id}")
-    public NinjaModel listarNinjaPorId(@PathVariable Long id){
+    public NinjaDTO listarNinjaPorId(@PathVariable Long id){
         return ninjaService.listarNinjaPorId(id);
     }
 
     // Alterar dados do ninja por id (UPDATE)
     @PutMapping("/atualizar/{id}")
-    public NinjaModel atualizarNinjaPorId(@PathVariable Long id, @RequestBody NinjaModel ninjaAtualizado){
+    public NinjaDTO atualizarNinjaPorId(@PathVariable Long id, @RequestBody NinjaDTO ninjaAtualizado){
         return ninjaService.atualizarNinjaPorId(id, ninjaAtualizado);
     }
 
