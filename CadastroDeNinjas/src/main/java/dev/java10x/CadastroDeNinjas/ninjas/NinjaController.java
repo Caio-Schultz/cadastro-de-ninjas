@@ -22,7 +22,7 @@ public class NinjaController {
     // Adicionar Ninja (CREATE)
     @PostMapping("/criar")
     // @RequestBody indica que é necessário passar no corpo da requisição POST um Json com os atributos (colunas) do ninja para ser adicionado
-    public NinjaModel criarNinja(@RequestBody NinjaModel ninja){
+    public NinjaDTO criarNinja(@RequestBody NinjaDTO ninja){
         return ninjaService.criarNinja(ninja);
     }
 
