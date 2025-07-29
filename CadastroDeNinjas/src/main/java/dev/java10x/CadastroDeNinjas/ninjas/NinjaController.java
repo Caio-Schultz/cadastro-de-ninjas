@@ -67,7 +67,7 @@ public class NinjaController {
         if(ninjaService.listarNinjaPorId(id) != null){
             NinjaDTO ninja = ninjaService.atualizarNinjaPorId(id, ninjaAtualizado);
             return ResponseEntity.status(HttpStatus.OK)
-                    .body("Ninja com ID " + id + " atualizado com sucesso!");
+                    .body("Ninja \"" + ninja.getNome() + "\" atualizado com sucesso!");
         }
         else {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
